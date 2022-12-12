@@ -1,0 +1,460 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400&family=Roboto:ital,wght@0,400;0,500;1,300;1,400&display=swap');
+
+* {
+    margin: 0;
+}
+body {
+    font-family: var(--roboto);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;   
+    background: rgb(57,98,173);
+    background: linear-gradient(210deg, rgba(57,98,173,1) 0%, rgba(125,56,171,1) 52%, rgba(182,43,43,1) 100%);
+}
+h1 {
+    font-size: 45px;
+    margin: 0;
+    font-family: var(--lato); 
+    font-weight: normal;
+    color: var(--font);
+
+}
+h1 span {
+    font-size: 24px;
+}
+.mini {
+    vertical-align: super;
+    font-size: 20px;
+    margin-left: -15px;
+    position: absolute;
+    color: var(--icon);
+}
+h2 {
+    font-size: 25px;
+    font-family: var(--roboto);
+    font-weight: 500;
+    color: var(--font);
+}
+h3 {
+    /* font-size: 25px; */
+    font-family: var(--roboto);
+    color: var(--yellow);
+    letter-spacing: 1px;
+    margin: 5px 0;
+}
+
+:root {
+    /* colors */
+    --yellow: #fbd229;
+    --yellow-darker: #fae691;
+    --red: #ED5243;
+    --red-darker: #F3A59E;
+    --green: #70a74b;
+    --green-darker: #b5d0a1;
+    --font: #555555;
+    --border: #ECECEC;
+    --icon: #9D9D9C;
+    --flag: #CCCCCC;
+    /* шрифты */
+
+    --roboto: 'Roboto', sans-serif;
+    --lato: 'Lato', sans-serif;
+
+}
+
+.wrapper {
+    width: 310px;
+    height: 550px;
+    perspective: 1000px;
+    position: relative;
+    cursor: pointer;
+}
+
+.card,
+.card2 {
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    border-radius: 9px;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    padding-left: 35px;
+    position: absolute;
+    gap: 19px;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    transition: all 1s ease;
+    left:0px;
+    top: 0px;
+}
+
+.card2 {
+    justify-content:start;
+    padding: 0 20px;
+    transform: rotateY(180deg);
+}
+
+.wrapper:hover .card {
+    transform: rotateY(180deg);
+}
+
+.wrapper:hover .card2 {
+    transform: rotateY(360deg);
+}
+
+.card2 h2 {
+    padding: 30px 0 20px;
+}
+
+.card2 ul {
+    color: var(--font);
+    font-size: 18px;
+    font-family: var(--roboto);
+}
+
+.card2 li {
+    margin-bottom: 20px;
+}
+
+.flag {
+    position: absolute;
+    height: 48px;
+    top: 30px;
+    left: calc( 50% + 5px);
+}
+
+.circle-box {
+    position: absolute;
+    right: 25px;
+    top: 60px;
+    width: 260px;
+    height: 260px; 
+}
+
+.circle-svg {
+    fill: none;
+    stroke: var(--border);
+    stroke-width: 10px;
+    stroke-dasharray:  754px;
+    stroke-dashoffset: 754px;
+    transition: all 0.3s ease;
+    stroke-linecap: round;
+    -webkit-animation: circle 0.7s ease-in-out 0.7s forwards;
+            animation: circle 0.7s ease-in-out 0.7s forwards;
+}
+
+.circle-svg--green {
+    stroke: var(--green);
+    stroke-width: 12px;
+    -webkit-animation: circle-green 0.7s ease-in-out 0.7s forwards;
+            animation: circle-green 0.7s ease-in-out 0.7s forwards;
+
+}
+
+.circle-svg--yellow {
+    stroke: var(--yellow);
+    stroke-width: 12px;
+    -webkit-animation: circle-yellow 0.7s ease-in-out 0.7s forwards;
+            animation: circle-yellow 0.7s ease-in-out 0.7s forwards;
+
+}
+
+/* фнимации кругов  */
+
+@-webkit-keyframes circle {
+    to {
+        stroke-dasharray:  664px 90px;
+        stroke-dashoffset: 144px;
+    }
+}
+
+@keyframes circle {
+    to {
+        stroke-dasharray:  664px 90px;
+        stroke-dashoffset: 144px;
+    }
+}
+
+@-webkit-keyframes circle-green {
+    to {
+        stroke-dasharray:  464px 290px;
+        stroke-dashoffset: 144px;
+    }
+}
+
+@keyframes circle-green {
+    to {
+        stroke-dasharray:  464px 290px;
+        stroke-dashoffset: 144px;
+    }
+}
+
+@-webkit-keyframes circle-yellow {
+    to {
+        stroke-dasharray:  234px 520px;
+        stroke-dashoffset: 144px;
+    }
+}
+
+@keyframes circle-yellow {
+    to {
+        stroke-dasharray:  234px 520px;
+        stroke-dashoffset: 144px;
+    }
+}
+
+/* конец анимации кругов */
+
+.circle {
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    margin-top: 90px;
+    margin-bottom: 60px;
+    position: relative;
+}
+
+.circle p {
+    width: 170px;
+    text-align: center;
+    color: var(--flag);
+    font-size: 14px;
+    
+}
+
+.triangle {
+    color: var(--green);
+    margin: 10px 0;
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.triangle::before {
+    content: ''; 
+    position: absolute;
+    border: 10px solid transparent; 
+    border-bottom: 10px solid var(--green);
+    left: 47px;
+    bottom: 19px;
+}
+
+.img {
+    position: absolute;
+    height: 290px;
+    left: 20px;
+    top: 165px;
+    opacity: 0.9;
+}
+
+.params {
+    display: flex;
+    flex-direction: column;
+    height: 130px;
+    margin-bottom: 30px;
+}
+
+.params_item {
+    display: flex;
+    width: 260px;
+    height: 50px;
+    padding: 8px;
+    font-weight: 500;
+    color: var(--font);
+    font-size: 14px;
+}
+.title {
+    width: 105px;
+}
+.percent {
+    width: 60px;
+    text-align: end;
+    padding-right: 20px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.percent :last-child::after {
+    content: '';
+    background-image: url(../images/human_full.svg);
+    background-repeat: no-repeat;
+    height: 14px;
+    width: 15px;
+    position: absolute;
+    right: 20px;
+    bottom: 3px;
+}
+
+.percent :last-child{
+    margin-right: 15px;
+    padding-right: 5px;
+    color: var(--icon);
+    font-weight: normal;
+}
+.chart {
+    width: 95px;
+    border-radius: 6px;
+    border-color: var(--border);
+    box-shadow: inset 0 0 5px var(--border);
+    overflow: hidden;
+    position: relative;
+}
+
+.chart span {
+    position: absolute;
+    right: 10px;
+    top: calc( 50% - 6px ) ;
+    font-size: 12px;
+    color: var(--font);
+    font-style: var(--roboto);
+}
+
+.chart_current {
+    height: 25px;
+    width: 100%;
+    display: flex;
+}
+.chart_prev {
+    height: 11px;
+    width: 100%;
+    display: flex;
+}
+
+.current__available {
+    height: 100%;
+    width: 0%;
+    transition: all 0.3s ease;
+}
+
+.current__available.green {
+    background-color: var(--green);
+    -webkit-animation: top-green 1s ease-in-out 0.7s forwards;
+    animation: top-green 1s ease-in-out 0.7s forwards;
+}
+.current__available.yellow {
+    background-color: var(--yellow);
+    -webkit-animation: top-yellow 1s ease-in-out 0.7s forwards;
+            animation: top-yellow 1s ease-in-out 0.7s forwards;
+}
+.current__available.red {
+    background-color: var(--red);
+    -webkit-animation: top-red 1s ease-in-out 0.7s forwards;
+            animation: top-red 1s ease-in-out 0.7s forwards;
+}
+
+.current__remainder {
+    height: 100%;
+    width: 1fr;
+    background-color: #fff;
+}
+
+.prev__available {
+    height: 1fr;
+    width: 0%;
+    transition: all 1s ease;
+}
+
+.prev__available.green {
+    background-color: var(--green-darker);
+    -webkit-animation: bottom-green 0.3s ease-in-out 0.7s forwards;
+            animation: bottom-green 0.3s ease-in-out 0.7s forwards;
+
+}
+.prev__available.yellow {
+    background-color: var(--yellow-darker);
+    -webkit-animation: bottom-yellow 0.3s ease-in-out 0.7s forwards;
+            animation: bottom-yellow 0.3s ease-in-out 0.7s forwards;
+
+}
+.prev__available.red {
+    background-color: var(--red-darker);
+    -webkit-animation: bottom-red 0.3s ease-in-out forwards;
+            animation: bottom-red 0.3s ease-in-out 0.7s forwards;
+
+}
+
+.prev__remainder {
+    height: 100%;
+    width: 1fr;
+    background-color: #fff;
+}
+
+
+
+/* анимации нижних графиков */
+
+@-webkit-keyframes top-green {
+  to {
+    width: 32%;
+  }
+}
+
+@keyframes top-green {
+  to {
+    width: 32%;
+  }
+}
+
+@-webkit-keyframes bottom-green {
+    to {
+        width: 30%;
+      }
+}
+
+@keyframes bottom-green {
+    to {
+        width: 30%;
+      }
+}
+
+@-webkit-keyframes top-yellow {
+   to {
+        width: 39%;
+      }
+}
+
+@keyframes top-yellow {
+   to {
+        width: 39%;
+      }
+}
+
+@-webkit-keyframes bottom-yellow {
+    to {
+        width: 34%;
+      }
+}
+
+@keyframes bottom-yellow {
+    to {
+        width: 34%;
+      }
+}
+
+@-webkit-keyframes top-red {
+ to {
+        width: 30%;
+      }
+}
+
+@keyframes top-red {
+    to {
+        width: 30%;
+      }
+}
+
+@-webkit-keyframes bottom-red {
+    to {
+        width: 39%;
+      }
+}
+
+@keyframes bottom-red {
+    to {
+        width: 39%;
+      }
+}
